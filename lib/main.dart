@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_exercise_4/ful_image.dart';
 import 'package:flutter_exercise_4/widget.dart';
 
 void main() {
@@ -44,6 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('タイトル', style: titleStyle(),),
       ),
+
+      //ListViewはRowやColumnと同じようにWidgetを並べるが、スクロールしたり、動的に中身を変えることができる。
       body: ListView.separated(
         padding: const EdgeInsets.all(10),
         scrollDirection: Axis.horizontal,
@@ -58,13 +61,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget imageTile(String imageUrl){
     return GestureDetector(
-      onTap: (){},
+
+      //問３： imgUrlを引数に渡して画面遷移。
+      onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context){return FullImage(imageUrl: imageUrl);}));},
       child: Stack(
         children: [
+
+          //ClipRRectはchildの角を丸くすることができる。
           ClipRRect(
             borderRadius: BorderRadius.circular(90),
               child: Image.network(imageUrl, scale: 20, width: 120, height: 120, fit: BoxFit.cover,),
           ),
+
+          //画像に同じ大きさの半透明なWidgetを被せている。
           Container(
             decoration: BoxDecoration(
                 color: const Color(0x44000000),
