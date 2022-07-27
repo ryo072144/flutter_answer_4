@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_exercise_4/widget.dart';
+import 'package:flutter_exercise_4/constants.dart';
 
 //問１： FullImageを作成。
 class FullImage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _FullImageState extends State<FullImage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Full Image', style: titleStyle(),), centerTitle: true, ),
+      appBar: AppBar(title: Text('Full Image', style: titleStyle,), centerTitle: true, ),
       body: Align(
         alignment: Alignment.topCenter,
 
