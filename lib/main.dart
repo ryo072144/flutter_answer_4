@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_exercise_4/ful_image.dart';
-import 'package:flutter_exercise_4/widget.dart';
+import 'package:flutter_exercise_4/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('タイトル', style: titleStyle(),),
+        title: Text('タイトル', style: titleStyle,),
       ),
 
       //ListViewはRowやColumnと同じようにWidgetを並べるが、スクロールしたり、動的に中身を変えることができる。
